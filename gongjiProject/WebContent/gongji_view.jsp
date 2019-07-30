@@ -11,10 +11,15 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	int id = Integer.parseInt(request.getParameter("key"));
+	int viewcnt = Integer.parseInt(request.getParameter("viewcnt"));
 	
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.56.102/kopoctc?serverTimezone=UTC",
 			"root", "asdf1234");
+	Statement stmt1 = conn.createStatement();
+	stmt1.execute("update gongji set viewcnt="+viewcnt+"+1 where id="+id+";");
+	
+	
 	Statement stmt = conn.createStatement();
 	ResultSet rset = stmt.executeQuery("SELECT * FROM gongji where id="+id+";");
 	
@@ -25,6 +30,7 @@
 			+ rset.getInt(1) + "'></td><tr>");
 	out.println("<td>제목</td><td width='500px'>" + rset.getString(2) + "</td><tr>");
 	out.println("<td>일자</td><td>" + rset.getDate(3) + "</td><tr>");
+	out.println("<td>조회수</td><td width='50px'>"+rset.getInt(8)+"</td><tr>");
 	out.println("<td>내용</td><td><div style='overflow:auto; width:500px; height:500px;'>" + rset.getString(4)
 			+ "</div></td>");
 

@@ -10,7 +10,7 @@
 </head>
 <body>
 <table border=1 align="center">
-<td width=50px align="center">번호</td><td width=500px align="center">제목</td><td width=100px align="center">등록일</td><tr>
+<td width=50px align="center">번호</td><td width=500px align="center">제목</td><td width=100px align="center">등록일</td><td width=50px align="center">조회수</td><tr>
 	<%
 		
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -56,15 +56,16 @@
 			
 			
 			Statement stmt = conn.createStatement();
-			ResultSet rset = stmt.executeQuery("SELECT id, title, DATE FROM gongji ORDER BY id DESC limit "+((correntPage) * 5)+","+countList+";");
+			ResultSet rset = stmt.executeQuery("SELECT id, title, DATE, viewcnt FROM gongji ORDER BY id DESC limit "+((correntPage) * 5)+","+countList+";");
 
 			
 
 			while (rset.next()) {
 				out.println("<td align='center'>" + rset.getInt(1) + "</td>");
-				out.println("<td><a href=gongji_view.jsp?key=" + rset.getInt(1) + ">" + rset.getString(2)
+				out.println("<td><a href=gongji_view.jsp?key=" + rset.getInt(1) + "&viewcnt="+rset.getInt(4)+">" + rset.getString(2)
 						+ "</a></td>");
-				out.println("<td align='center'>" + rset.getDate(3) + "</td><tr>");
+				out.println("<td align='center'>" + rset.getDate(3) + "</td>");
+				out.println("<td align='center'>"+rset.getInt(4)+"</td><tr>");
 			}
 			out.println("</table>");
 			rset.close();
