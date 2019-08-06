@@ -31,8 +31,8 @@
 	out.println("<td>제목</td><td width='500px'>" + rset.getString(2) + "</td><tr>");
 	out.println("<td>일자</td><td>" + rset.getDate(3) + "</td><tr>");
 	out.println("<td>조회수</td><td width='50px'>"+rset.getInt(8)+"</td><tr>");
-	out.println("<td>내용</td><td><div style='overflow:auto; width:500px; height:500px;'>" + rset.getString(4)
-			+ "</div></td>");
+	out.println("<td>내용</td><td><textarea id='textarea' style='overflow:auto; width:500px; height:500px;'>" + rset.getString(4)
+			+ "</textarea></td>");
 
 	
 	
