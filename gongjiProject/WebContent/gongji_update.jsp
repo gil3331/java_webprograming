@@ -40,7 +40,7 @@ function checkID(){
 </script>
 <%			
 out.println("<form method='post'><table border=1 align='center'>");
-out.println("<td>번호</td><td width='500px'><input type=text id=ID name=id value='"+rset.getInt(1)+"' onkeyUp='checkID()'></td><tr>");
+out.println("<td>번호</td><td width='500px'><input type=text id=ID name=id value='"+rset.getInt(1)+"' onkeyUp='checkID()' readonly/></td><tr>");
 out.println("<td>제목</td><td width='500px'><input type=text name=title value='"+rset.getString(2)+"' maxlength='70'></td><tr>");
 out.println("<td>일자</td><td>"+rset.getDate(3)+"</td><tr>");
 out.println("<td>내용</td><td><div style='overflow:auto; width:500px; height:500px;'>");

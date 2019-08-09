@@ -126,12 +126,10 @@
 
 				<div style="height: 300px" id="holder"></div></td>
 	</table>
-	<table border=3 align="center" rules=rows bordercolor=#FFFFFF
-		width=548px>
+	<table border=3 align="center" rules=rows bordercolor=#FFFFFF width=548px>
 
-		<td align="right"><input type="submit"
-			formaction="stock_list.jsp" value="취소"> <input type="submit"
-			formaction="stock_insert.jsp" value="쓰기"></td>
+		<td align="right"><input type="submit" formaction="stock_list.jsp" value="취소">
+		<input type="submit" formaction="stock_insert.jsp" value="쓰기"></td>
 		</form>
 	</table>
 </body>

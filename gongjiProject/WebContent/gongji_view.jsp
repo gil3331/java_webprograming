@@ -39,6 +39,7 @@
 		
 	rset.close();
 	stmt.close();
+	stmt1.close();
 	conn.close();
 %>
 <table border=3 align="center" rules=rows bordercolor=#FFFFFF width=548px>

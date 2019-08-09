@@ -155,10 +155,10 @@ return ture;
 				</ul></li>
 			<li><a>예약하기</a>
 				<ul id="sub-menu">
-					<li><a href="d_01.jsp">예약상황</a></li>
-					<li><a href="d_02.jsp">예약하기</a></li>
-					<li><a href="adm_allview">관리자페이지</a></li>
-					<li><a href="adm_logout">관리자로그아웃</a></li>
+					<li><a href="d_01.html">예약상황</a></li>
+					<li><a href="d_02.html">예약하기</a></li>
+					<li><a href="adm_allview.jsp">관리자페이지</a></li>
+					<li><a href="adm_logout.jsp">관리자로그아웃</a></li>
 				</ul></li>
 			<li><a>리조트소식</a>
 				<ul id="sub-menu">
