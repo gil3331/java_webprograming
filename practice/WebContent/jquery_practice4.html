@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery_practice2</title>
+
+	<script src="http://code.jQuery.com/jQuery-3.2.1.min.js"></script>
+	<script>
+	var n=0;
+	$(document).ready(function(){
+		$("div.out").mouseenter(function(){//out클래스의 div에 마우스가 들어오면
+			$("p:first",this).text("마우스 포인트 들어옴");//텍스트를 찍어주고
+			$("p:last",this).text(++n);//숫자를 더해준다.
+		});
+	});
+	</script>
+	<style>
+		div.out{
+			width:200px;
+			height:100px;
+			border:1px solid #000000;
+			text-align:center;
+			background-color:yellow;
+		}
+	</style>
+</head>
+<body>
+	<div class="out">
+	<p>마우스 이벤트 알아보기</p>
+	<p>0</p>
+</div>
+</body>
+</html>

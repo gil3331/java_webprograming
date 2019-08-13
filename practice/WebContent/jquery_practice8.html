@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery_practice2</title>
+
+	<script src="http://code.jQuery.com/jQuery-3.2.1.min.js"></script>
+	<script>
+	var n=0;
+	$(document).ready(function(){
+		$("button.b1").click(function(){//b1클래스의 버튼 클릭시
+			$("img").animate({//이미지 태그의 내용이 너비가 100px이 됨
+				width:'100px'
+			});
+		});
+		$("button.b2").click(function(){//b2클래스의 버튼 클릭시
+			$("img").animate({//이미지 태그의 내용이 너비가 200px이 됨
+				width:'200px'
+			});
+		});
+		$("button.b3").click(function(){//b3클래스의 버튼 클릭시
+			$("img").animate({//이미지 태그의 내용이 너비가 300px이 됨
+				width:'300px'
+			});
+		});	
+	});
+	</script>
+	<style>
+		.css_pic{
+			height:430px;
+			text-align:center;
+		}
+		.css_pic img{
+			width:250px;
+		}
+	</style>
+</head>
+<body>
+	<div class="css_pic">
+	<p>버튼을 누르면 그림의 크기가 바뀝니다.</p>
+	<button class="b1">가로 100픽셀</button>
+	<button class="b2">가로 200픽셀</button>
+	<button class="b3">가로 300픽셀</button><br>
+	<img name="pic1" src="minastiris.jpg"/>
+	</div>
+</body>
+</html>

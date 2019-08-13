@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery_practice12</title>
+
+	<script src="http://code.jQuery.com/jQuery-3.2.1.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("#panel").click(function(){//id panel을 클릭하면
+			$("#panel").slideUp("fast");//id panel이 빠르게 올라간다.
+		});
+		$("#slide").click(function(){//id slide를 클릭하면
+			$("#panel").slideDown(5000);//panel이 5초동안 내려간다.
+		});
+		$("#flip").click(function(){//id flip을 클릭하면
+			$("#panel").slideToggle("slow");//panel이 천천히 토글된다.(up/down반복)
+		});
+		$("#stop").click(function(){//id stop을 클릭하면
+			$("#panel").stop();//panel이 멈춘다.
+		});
+	});
+	</script>
+	<style>
+	#slide, #panel, #flip{
+		padding:5px;
+		text-align:center;
+		background-color:#e5eecc;
+		border:solid 1px #c3c3c3;
+	}
+	#panel{
+		padding:70px;
+		display:none;
+		background-color:#ffff00;
+	}
+	</style>
+</head>
+<body>
+	<div id="slide">[오늘의 공지사항]</div>
+	<div id="panel">오늘은 jQuery 프로그램을 학습합니다.<br>
+					예제를 작성한 후 실행해보세요.</div>
+	<div id="flip">Toggle slide</div>
+	<p></p>
+	<button id="stop">Stop sliding</button>
+</body>
+</html>

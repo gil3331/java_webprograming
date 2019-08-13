@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery_practice3</title>
+
+<script src="http://code.jQuery.com/jQuery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("ans").hide();//ans태그를 숨기고,
+		$("p.q1").click(function(){//q1클래스를 지닌 p태그를 클릭하면
+			$("ans.q1").show();//q1클래스를 가진 ans태그를 보여준다.
+		});
+		$("ans.q1").click(function(){//q1클래스를 가진 ans태그를 누르면
+			$(this).hide();//누른 내용이 숨겨진다.
+		});
+		$("p.q2").click(function(){//q2클래스를 지닌 p태그를 클릭하면
+			$("ans.q2").show();//q2클래스를 가진 ans태그를 보여준다.
+		});
+		$("ans.q2").click(function(){//q2클래스를 가진 ans태그를 누르면
+			$(this).hide();//누른 내용이 숨겨진다.
+		});
+	});
+</script>
+</head>
+<body>
+	<h2>질문1 : 대한민국의 수도는 어디입니까?</h2>
+	<p class="q1">[정답 보기]</p>
+	<ans class="q1">대한민국의 수도는 <strong>서울</strong>입니다.</ans>
+	<br></br>
+	<h2>질문2 : 대한민국의 국보1호는 무엇입니까?</h2>
+	<p class="q2">[정답 보기]</p>
+	<ans class="q2">대한민국의 국보1호는 <strong>숭례문</strong>입니다.</ans>
+</body>
+</html>

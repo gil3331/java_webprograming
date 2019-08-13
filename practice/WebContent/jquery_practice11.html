@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery_practice2</title>
+
+	<script src="http://code.jQuery.com/jQuery-3.2.1.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("#out").click(function(){//id out을 클릭시
+			$("img").fadeOut("slow");//img태그가 천천히 사라진다.
+		});
+		$("#in").click(function(){//id in을 클릭시
+			$("img").fadeIn("slow");//img태그가 천천이 보여진다.
+		});
+		$("#toggle").click(function(){//id toggle을 클릭시
+			$("img").fadeToggle("slow");//img태그가 천천히 보여지거나, 사라진다.
+		});
+		$("#to50").click(function(){//id to50을 클릭시
+			$("img").fadeTo("slow",0.5);//img태그가 천천히 투명도가 반으로 낮아진다.
+		});
+		$("#to10").click(function(){//id to10을 클릭시
+			$("img").fadeTo("slow",0.1);//img태그가 천천히 투명도가 0.1로 낮아진다.
+		});
+		$("#to100").click(function(){//id to100을 클릭시
+			$("img").fadeTo("slow",1.0);//img태그가 천천히 투명도가 1.0이 된다.
+		});
+	});
+	</script>
+</head>
+<body>
+	<button id="out">fadeOut</button>
+	<button id="in">fadeIn</button>
+	<button id="toggle">fadeToggle</button>
+	<button id="to50">opacity 50%</button>
+	<button id="to10">opacity 90%</button>
+	<button id="to100">opacity 0%</button>
+	<p></p>
+	<img name="pic1" src="minastiris.jpg"/>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery_practice2</title>
+
+	<script src="http://code.jQuery.com/jQuery-3.2.1.min.js"></script>
+	<script>//실상은 function적용
+		function move(obj, time){//특정된 오브젝트와 시간을 적용하여
+			$(obj).stop().animate({
+				left:-350,//왼쪽으로 -350만큼 이동한다.
+				top:0
+			},time);
+		}
+		function back(css){//함수 내부에 특정된 대상에
+			$(css).stop().animate({
+				left:0,//이런 내용을 적용한다.(변화X)
+				top:0
+			});
+		}
+	</script>
+	<style>
+		.moving{
+		border:1px solid #000000;
+		margin:20px auto 0 auto;
+		text-align:right;
+		width:550px;
+		}
+		.moving img{
+			cursor:pointer;
+			position:relative;
+		}
+	</style>
+</head>
+<body>
+	<div class="init">
+		<button type="button" onclick="back('.moving img')">초기화 상태</button><br>
+	</div><--back함수에 css .moving img를 적용한다.-->
+	<div class="moving">
+	<img onclick="move(this,6000)" src="minastiris.jpg"/><br>
+	<img onclick="move(this,3000)" src="helmdeep.png"/><br>
+	<img onclick="move(this,1000)" src="moria.jpg"/><br>
+	</div><--move함수를 적용하고, 각각의 오브젝트에 6초, 3초, 1초 동안의 함수를 구현-->
+</body>
+</html>
