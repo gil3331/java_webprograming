@@ -1,3 +1,6 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page import="java.sql.*,javax.sql.*,java.io.*,java.net.*,java.util.*,java.text.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,13 +79,7 @@ pading-left : 0px;
 }
 
 </style>
-<script>
-var d = new Date();
-var year = d.getFullYear();
-var month = (d.getMonth() + 1);
-var date = d.getDate();
-var today = year + "년" + month + "월" + date +"일";
-</script>
+
 
 <body>
 	<div style=background:#faf4e8; style="text-align:center">
@@ -112,7 +109,7 @@ var today = year + "년" + month + "월" + date +"일";
 				</ul></li>
 			<li><a>예약하기</a>
 				<ul id="sub-menu">
-					<li><a href="d_01.html">예약상황</a></li>
+					<li><a href="d_01.jsp">예약상황</a></li>
 					<li><a href="d_02.html">예약하기</a></li>
 					<li><a href="adm_allview.jsp">관리자페이지</a></li>
 					<li><a href="adm_logout.jsp">관리자로그아웃</a></li>
@@ -126,9 +123,19 @@ var today = year + "년" + month + "월" + date +"일";
 	</nav>
 	</div>
 <div style="margin-top:10%">
+<h3 align="center">30일간의 예약리스트</h3>
 <table border=1 style="width:100%; text-align:center">
 <td>날짜</td><td>VIP룸</td><td>일반룸</td><td>합리적인룸</td><tr>
-<td><script>document.write(today)</script></td><td><a href="d_02.html">예약가능</a></td><td><a href="d_02.html">예약가능</a></td><td><a href="d_02.html">예약가능</a></td><tr>
+<%
+Calendar cal = Calendar.getInstance();
+SimpleDateFormat dformat = new SimpleDateFormat("yyyy-MM-dd");
+
+for (int i=0; i<30; i++){
+   out.println("<tr><td>" + dformat.format(cal.getTime())+"</td><td><a href='d_02.html'>예약가능</a></td><td><a href='d_02.html'>예약가능</a></td><td><a href='d_02.html'>예약가능</a></td></tr>");
+   cal.add(cal.DATE,1);	
+}
+%>
+
 
 </table>
 </div>
