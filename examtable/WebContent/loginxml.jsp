@@ -6,8 +6,8 @@
 	String login_url="login.jsp?rtn_url="+thispage;
 	
 	String loginVal=(String) session.getAttribute("loginOK");
-	if(loginVal==null||!loginVal.equals("YES"))
-		response.sendRedirect(login_url);//로그인 필요
+	if(loginVal==null||!loginVal.equals("YES"))//loginVal가 널이거나, yes가 아닐때,
+		response.sendRedirect(login_url);//login_url을 다시 응답 시킨다.(사실상 현 페이지)
 %>
 <%
 Class.forName("com.mysql.cj.jdbc.Driver");

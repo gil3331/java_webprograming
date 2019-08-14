@@ -11,26 +11,27 @@
 <body>
 <html>
 <head>
-<%
-	String username = request.getParameter("username");
-	String userpasswd = request.getParameter("userpasswd");
-	String rtn_url = request.getParameter("rtn_url");
-	String logincnt = request.getParameter("logincnt");
+<%//실질적인 기능자체는 loginxml.jsp에서 구현되며, 
+//성적표를 조회하기에 앞서 로그인 세션 기능을 구현하기 위하여 해당 jsp를 만든다.
+	String username = request.getParameter("username");//loginxml.jsp에서 사용자 이름과
+	String userpasswd = request.getParameter("userpasswd");//사용자 비밀번호
+	String rtn_url = request.getParameter("rtn_url");//url
+	String logincnt = request.getParameter("logincnt");//로그인 횟수를 받는다.
 	if (logincnt == null)
 		logincnt = "0";
 	if (username == null)
-		username = "";
+		username = "";//이 부분들은 각각의 상황에 대한 예외처리
 	if (userpasswd == null)
 		userpasswd = "";
 	if (rtn_url == null)
 		rtn_url = "";
 
 	if (username.equals("kopoctc") && userpasswd.equals("kopoctc")) {//login ok
-		session.setAttribute("loginOK", "YES");
-		response.sendRedirect(rtn_url);
+		session.setAttribute("loginOK", "YES");//로그인 성공시에
+		response.sendRedirect(rtn_url);//해당 url로 응답을 준다.
 	} else {//login Err
 		logincnt = Integer.toString(Integer.parseInt(logincnt) + 1);
-	}
+	}//실패한 경우는 그냥 로그인 시도횟수 1회증가
 %>
 </head>
 <BODY>
